@@ -1,9 +1,87 @@
 [
     {
-        "plant_name": "",
-        "observation": "",
+        "plant_name": "Horsetail",
+        "description": "Horsetail produces two differnt stalks in some species.",
         "image": "",
-        "location": "",
-        "user_id": ""
+        "location": "Evergreen forest",
+        "user_id": "1"
+    },
+    {
+        "plant_name": "alfalfa",
+        "description": "Alfalfa is an indroduced crop plant from the Middle East",
+        "image": "",
+        "location": "Bear Paw mountains",
+        "user_id": "1"
+    },
+    {
+        "plant_name": "Deer's tounge",
+        "description": "The plant is mildly bitter, while the raw root is emetic and cathartic",
+        "image": "",
+        "location": "Mount St.Helens",
+        "user_id": "2"
+    },
+    {
+        "plant_name": "Honey locust",
+        "description": "The immature, raw seeds tast like green peas",
+        "image": "",
+        "location": "Mount Raineer",
+        "user_id": "4"
+    },
+    {
+        "plant_name": "Wood nettle",
+        "description": "Young leaves are edible after cooking to destroy the stinging hairs",
+        "image": "",
+        "location": "Olympic Penninsula",
+        "user_id": "3"
+    },
+    {
+        "plant_name": "False dandelion",
+        "description": "The leaves are edible. The hardened, milky juice can be chewed as gum",
+        "image": "",
+        "location": "Blue mountain",
+        "user_id": "4"
+    },
+    {
+        "plant_name": "Daisy",
+        "description": "Introduced from Europe. The tea is used as a digestive aid, antipasmodic, laxative, expectorant and demulcent ",
+        "image": "",
+        "location": "Downtown Tacoma",
+        "user_id": "3"
+    },
+    {
+        "plant_name": "Bitteroot",
+        "description": "The succulent leaves grow early in spring, often re-absorbed by the plants prior to summer flowering, such that the flowers seem to sprout directly from the dirt",
+        "image": "",
+        "location": "Bear Paw mountains",
+        "user_id": "1"
+    },
+    {
+        "plant_name": "Woodsorrel",
+        "description": "Oxalic acid gives a tart, lemon-like flavor",
+        "image": "",
+        "location": "Planter on my deck",
+        "user_id": "1"
+    },
+    {
+        "plant_name": "Tinytime",
+        "description": "A rare plant, native to Missouri and the surrounding states",
+        "image": "",
+        "location": "Missouri I guess?",
+        "user_id": "4"
+    },
+    {
+        "plant_name": "Larkspur",
+        "description": "A vinegar or rubbing alcohol rincture of the plant is used for lice",
+        "image": "",
+        "location": "Evergreen forest",
+        "user_id": "2"
+    },
+    {
+        "plant_name": "Chokeberry",
+        "description": "Aronia juice is available in many stores",
+        "image": "",
+        "location": "Olympic Penninsula",
+        "user_id": "3"
     }
+
 ]

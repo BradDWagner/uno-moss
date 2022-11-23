@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Plant extends Model { };
+class Plant extends Model {};
 
 Plant.init(
   {
@@ -15,7 +15,7 @@ Plant.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    observation: {
+    description: {
       type: DataTypes.STRING(500),
       allowNull: false,
     },
@@ -38,7 +38,14 @@ Plant.init(
         model: 'user',
         key: 'id',
       }
-    }
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'plant',
   }
 )
 
