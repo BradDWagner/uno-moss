@@ -3,13 +3,13 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
-    const email = document.querySelector("#userEmail").value.trim();
-    const password = document.querySelector('#userPassword').value.trim();
+    const username = document.querySelector("#username").value.trim();
+    const password = document.querySelector('#password').value.trim();
 
-    if (email && password) {
+    if (username && password) {
         const response = await fetch('/api/users/login', {
             method: 'POST',
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ username, password }),
             headers: { 'Content-Type': 'application/json'}
         }); 
         if (response.ok) {
@@ -25,21 +25,19 @@ const loginFormHandler = async (event) => {
 
 const signUpFormHandler = async (event) => {
     event.preventDefault();
-//need proper element name
-    // const name = document.querySelector('#???').value.trim();
-    const email = document.querySelector('#userEmail').value.trim();
-    const password = document.querySelector('#userPassword').value.trim();
+    const username = document.querySelector('#username').value.trim();
+    const password = document.querySelector('#password').value.trim();
 
-if (name && email && password) {
+if (username && password) {
     const response = await fetch('/api/user', {
         method: 'POST',
-        body: JSON.stringify({ name, email, password}),
+        body: JSON.stringify({ username, password}),
         headers: { 'Content-Type': 'application/json'}
     });
 
     if (response.ok) {
         //fix location file
-        document.location.replace("/???");
+        document.location.replace("/newUser.handlebars");
     } else {
         alert(response.statusText)
     }
