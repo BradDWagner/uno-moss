@@ -1,16 +1,16 @@
-const router = express.Router();
 const express = require("express");
+const router = express.Router();
 const withAuth = require("../utils/auth");
 const { User, Plant } = require("../models");
 
-router.get("/login", (req, res) => {
+router.get("/", (req, res) => {
   if (req.session.user) {
-    return res.redirect("/profile");
+    return res.redirect("/home");
   }
   res.render("login");
 });
 
-router.get("/", withAuth, async (req, res) => {
+router.get("/home", withAuth, async (req, res) => {
   try {
     // Get all plants and JOIN with user data
     const plantData = await Plant.findAll({
@@ -27,7 +27,7 @@ router.get("/", withAuth, async (req, res) => {
     );
 
     // Pass serialized data and session flag into template
-    res.render("gallery", {
+    res.render("homepage", {
       plantList,
       logged_in: req.session.logged_in,
     });
@@ -37,32 +37,22 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 // Use withAuth middleware to prevent access to route
-router.get("/profile", withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ["password"] },
-      include: [{ model: Plant }],
-    });
-    const user = userData.get({ plain: true });
-    console.log(user);
-    res.render("profile", {
-      ...user,
-      logged_in: true,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get("/login", (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect("/profile");
-    return;
-  }
-
-  res.render("login");
-});
+// router.get("/profile", withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ["password"] },
+//       include: [{ model: Plant }],
+//     });
+//     const user = userData.get({ plain: true });
+//     console.log(user);
+//     res.render("profile", {
+//       ...user,
+//       logged_in: true,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
