@@ -19,6 +19,7 @@ router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });
+
 // Find a single user
 router.get("/:id", (req, res) => {
   User.findByPk(req.params.id, {})
