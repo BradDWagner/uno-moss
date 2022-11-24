@@ -1,0 +1,26 @@
+<div class="card width-fluid">
+{{!-- plant name text box --}}
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">{{plant.plant_name}}</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+        </div>
+{{!-- plant location text box --}}
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">{{plant.location}}</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+        </div>
+{{!-- plant description text box --}}
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">{{plant.description}}</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+        </div>
+{{!-- file uploader --}}
+        <div class="mb-3">
+            <input class="form-control" type="file" id="formFile">
+        </div>
+{{!-- submit button --}}
+        <button type="button" class="btn btn-success btn-lg">Grow Your Garden</button>
+    </div>
