@@ -13,9 +13,9 @@ const loginFormHandler = async (event) => {
             headers: { 'Content-Type': 'application/json'}
         }); 
         if (response.ok) {
-           document.location.replace('/profile');  
+           document.location.replace('/home');  
         } else {
-            alert(response.statusText);
+            redirect("/");
         }
     }
 };
