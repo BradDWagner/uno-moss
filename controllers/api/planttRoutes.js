@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { User, Plant } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+// Find all
 router.get("/", (req, res) => {
   Plant.findAll({
     include: [
@@ -19,7 +20,7 @@ router.get("/", (req, res) => {
       res.status(500).json({ msg: "an error occured", err });
     });
 });
-//find one
+// Find one
 router.get("/:id", (req, res) => {
   Plant.findByPk(req.params.id, {})
     .then((dbPlant) => {
@@ -31,7 +32,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-//create Plant
+// Create Plant
 router.post("/", withAuth, (req, res) => {
   Plant.create({
     ...req.body,
