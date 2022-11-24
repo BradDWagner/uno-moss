@@ -1,1 +1,14 @@
+<button type="button" class="btn btn-success btn-lg">Grow Your Garden</button>
 
+<div>
+    {{#each plants as |plant|}}
+    <div class="card" style="width: 18rem;">
+        <a href="/plant/{{plant.id}}">
+            <img src="./public/img/{{plant.image}}" class="card-img-top" alt="logo">
+            <div class="card-body">
+                <h1 class="card-text">{{plant.plant_name}}</h1>
+            </div>
+        </a>
+    </div>
+    {{/each}}
+</div>
