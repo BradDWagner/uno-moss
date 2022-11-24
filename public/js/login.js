@@ -2,7 +2,7 @@
 
 const loginFormHandler = async (event) => {
     event.preventDefault();
-//need element name for query selector
+
     const email = document.querySelector("#userEmail").value.trim();
     const password = document.querySelector('#userPassword').value.trim();
 
@@ -12,7 +12,6 @@ const loginFormHandler = async (event) => {
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json'}
         }); 
-    //not sure about this
         if (response.ok) {
            document.location.replace('/profile');  
         } else {
@@ -26,7 +25,7 @@ const loginFormHandler = async (event) => {
 
 const signUpFormHandler = async (event) => {
     event.preventDefault();
-//need proper element names 
+//need proper element name
     // const name = document.querySelector('#???').value.trim();
     const email = document.querySelector('#userEmail').value.trim();
     const password = document.querySelector('#userPassword').value.trim();
@@ -49,4 +48,4 @@ if (name && email && password) {
 
 document.querySelector('#loginButton').addEventListener('submit', loginFormHandler);
 
-document.querySelector('#signUpbutton', signUpFormHandler);
+document.querySelector('#signUpbutton').addEventListener('click', signUpFormHandler);
