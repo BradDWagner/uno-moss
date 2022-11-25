@@ -12,8 +12,9 @@ const loginFormHandler = async (event) => {
             body: JSON.stringify({ username, password }),
             headers: { 'Content-Type': 'application/json'}
         }); 
+        console.log(response.ok)
         if (response.ok) {
-           document.location.replace('/profile');  
+           document.location.replace('/home');  
         } else {
             alert(response.statusText);
         }

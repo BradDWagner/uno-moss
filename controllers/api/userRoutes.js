@@ -37,7 +37,7 @@ router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({
       where: {
-        username: req.body.username,
+        user_name: req.body.username,
       },
     });
     if (!userData) {
@@ -46,7 +46,7 @@ router.post("/login", async (req, res) => {
     if (bcrypt.compareSync(req.body.password, userData.password)) {
       req.session.user = {
         id: userData.id,
-        username: userData.username,
+        user_name: userData.user_name,
       };
       const cleanData = userData.get({ plain: true });
       console.log(cleanData);

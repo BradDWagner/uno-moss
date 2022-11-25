@@ -1,26 +1,20 @@
-<div class="card width-fluid">
-{{!-- plant name text box --}}
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="name">{{plant.plant_name}}</span>
-            <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm">
+<form class="form upload-group" action="/api/plants/upload" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input type="text" class="form-control" id="plant_name" name="plant_name">
+
         </div>
-{{!-- plant location text box --}}
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="location">{{plant.location}}</span>
-            <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm">
+        <div class="form-group">
+                <label for="location">location</label>
+                <input type="text" class="form-control" id="location" name="location">
         </div>
-{{!-- plant description text box --}}
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="description">{{plant.description}}</span>
-            <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm">
+        <div class="form-group">
+                <label for="description">description</label>
+                <input type="text" class="form-control" id="description" name="description">
         </div>
-{{!-- file uploader --}}
-        <div class="mb-3">
-            <input class="form-control" type="file" id="upload">
+        <div class="form-group">
+                <label for="upload">Upload your image</label>
+                <input type="file" class="form-control-file" id="upload" name="image">
         </div>
-{{!-- submit button --}}
-        <button type="button" class="btn btn-success btn-lg" id="save">Grow Your Garden</button>
-    </div>
+        <button type="submit" class="btn btn-success btn-lg">Grow Your Garden</button>
+</form>
