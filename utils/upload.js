@@ -13,7 +13,7 @@ var storage = multer.diskStorage({
         cb(null, './public/img/uploads/');
     },
     filename: (req, file, cb) => {
-        cb(null, file.originalname )
+        cb(null, req.session.user.id + "-" + file.originalname )
     }
 })
 
