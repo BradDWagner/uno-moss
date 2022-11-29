@@ -10,14 +10,14 @@ router.get("/", (req, res) => {
   res.render("login");
 });
 
-router.get("/home", withAuth, async (req, res) => {
+router.get("/home", async (req, res) => {
   try {
     // Get all plants and JOIN with user data
     const plantData = await Plant.findAll({
       include: [
         {
           model: User,
-          attributes: ["username"],
+          attributes: ["user_name"],
         },
       ],
     });
@@ -54,5 +54,9 @@ router.get("/home", withAuth, async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
+
+router.get('/grow', async (req, res) => {
+  res.render('create')
+})
 
 module.exports = router;

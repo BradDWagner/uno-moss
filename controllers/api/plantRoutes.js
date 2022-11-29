@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const { User, Plant } = require("../../models");
 const withAuth = require("../../utils/auth");
+const uploadFile = require('../../utils/upload');
 
-// Find all
+// Find all 
 router.get("/", (req, res) => {
   Plant.findAll({
     include: [
@@ -46,6 +47,28 @@ router.post("/", withAuth, (req, res) => {
       res.status(500).json({ msg: "an error occured", err });
     });
 });
+
+//TODO: add auth
+// Create Plant and upload image
+router.post('/upload', uploadFile.single("image"), async (req, res) => {
+  try {
+    if(req.file == undefined) {
+      return res.status(400).send('You must select a file.');
+    }
+    const newPlant = await Plant.create({
+      plant_name: req.body.plant_name,
+      description: req.body.description,
+      //store file name in the image key so it can be called using it's file extention
+      image: req.session.user.id + "-" +  req.file.originalname,
+      location: req.body.location,
+      user_id: req.session.user.id
+    })
+
+    res.status(200).redirect('/home')
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
 
 // Update Plant
 router.put("/:id", (req, res) => {

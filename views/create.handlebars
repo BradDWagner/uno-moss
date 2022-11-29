@@ -1,26 +1,25 @@
 <div class="card width-fluid">
-{{!-- plant name text box --}}
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="name">{{plant.plant_name}}</span>
-            <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm">
-        </div>
-{{!-- plant location text box --}}
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="location">{{plant.location}}</span>
-            <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm">
-        </div>
-{{!-- plant description text box --}}
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="description">{{plant.description}}</span>
-            <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm">
-        </div>
-{{!-- file uploader --}}
-        <div class="mb-3">
-            <input class="form-control" type="file" id="upload">
-        </div>
-{{!-- submit button --}}
-        <button type="button" class="btn btn-success btn-lg" id="save">Grow Your Garden</button>
-    </div>
+        {{!-- <form class="form upload-group"> --}}
+        <form class="form upload-group" action="/api/plants/upload" enctype="multipart/form-data" method="post">
+                <div class="form-group input-group input-group-sm mb-3">
+                        <span class="input-group-text">Plant name</span>
+                        <input type="text" class="form-control" id="plant_name" name="plant_name">
+
+                </div>
+                <div class="form-group input-group input-group-sm mb-3">
+                        <span class="input-group-text">Location</span>
+                        <input type="text" class="form-control" id="location" name="location">
+                </div>
+                <div class="form-group input-group input-group-sm mb-3">
+                        <span class="input-group-text">description</span>
+                        <input type="text" class="form-control" id="description" name="description">
+                </div>
+                <div class="form-group mb-3">
+                        <span class="input-group-text">Upload your image</span>
+                        <input type="file" class="form-control-file" id="upload" name="image">
+                </div>
+                <button type="submit" class="btn btn-success btn-lg">Grow Your Garden</button>
+        </form>
+</div>
+
+{{!-- <script src="/js/create.js"></script> --}}

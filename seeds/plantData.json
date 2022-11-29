@@ -7,23 +7,23 @@
         "user_id": "1"
     },
     {
-        "plant_name": "alfalfa",
-        "description": "Alfalfa is an indroduced crop plant from the Middle East",
-        "image": "flowering-alfalfa-closeup.jpg",
-        "location": "Bear Paw mountains",
+        "plant_name": "Oregon Grape",
+        "description": "Common plant in the PNW, easily identifiable by its shiny, spiny, multicolored leaves. In the summer it produces a grape colored berry",
+        "image": "image6.jpeg",
+        "location": "Tumwater falls",
         "user_id": "1"
     },
     {
-        "plant_name": "Deer's tounge",
-        "description": "The plant is mildly bitter, while the raw root is emetic and cathartic",
-        "image": "10-carphephorus-paniculatus2-332x500.jpeg",
-        "location": "Mount St.Helens",
+        "plant_name": "Rock Polypody",
+        "description": "Found many growing out of the moss on the side of a tree in late fall",
+        "image": "image1.jpeg",
+        "location": "Tumwater falls",
         "user_id": "2"
     },
     {
-        "plant_name": "Honey locust",
-        "description": "The immature, raw seeds tast like green peas",
-        "image": "Gleditsia_triacanthos_Maryhill_Museum_01.jpg",
+        "plant_name": "Common Snowberry",
+        "description": "In the honeysuckle family. White berries still on the plant into late fall",
+        "image": "image2.jpeg",
         "location": "Mount Raineer",
         "user_id": "4"
     },
@@ -35,9 +35,9 @@
         "user_id": "3"
     },
     {
-        "plant_name": "False dandelion",
-        "description": "The leaves are edible. The hardened, milky juice can be chewed as gum",
-        "image": "False-Dandelion1.jpg",
+        "plant_name": "Beech tree",
+        "description": "Orange leaves stuck out in the landscape. Species still needs to be identified",
+        "image": "image4.jpeg",
         "location": "Blue mountain",
         "user_id": "4"
     },
@@ -70,9 +70,9 @@
         "user_id": "4"
     },
     {
-        "plant_name": "Larkspur",
-        "description": "A vinegar or rubbing alcohol rincture of the plant is used for lice",
-        "image": "Ultimate-Guide-to-Larkspur-Flower-Meaning-Symbolism-and-Uses,jpg.jpeg",
+        "plant_name": "European Holly",
+        "description": "Native to western and souther Europe. A familiar Christmas decoration. evergreen",
+        "image": "image5.jpeg",
         "location": "Evergreen forest",
         "user_id": "2"
     },
