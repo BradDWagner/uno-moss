@@ -48,7 +48,6 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
-//TODO: add auth
 // Create Plant and upload image
 router.post('/upload', uploadFile.single("image"), async (req, res) => {
   try {

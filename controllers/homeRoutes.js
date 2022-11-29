@@ -60,8 +60,9 @@ router.get('/grow', async (req, res) => {
   res.render('create')
 })
 
+router.get('/newUser', async (req, res) => {
+  res.render('newUser', {logged_in: req.session.logged_in})
+})
+
 module.exports = router;
 
-router.get('/newUser', async (req, res) => {
-  res.render('newUser')
-})
