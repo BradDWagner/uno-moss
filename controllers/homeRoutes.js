@@ -49,7 +49,6 @@ router.get("/grow", withAuth, (req, res) => {
 });
 
 router.get("/plant/:id", withAuth, async (req, res) => {
-  console.log(req.params.id)
   try {
     const plantData = await Plant.findByPk(req.params.id, {
       include: [
