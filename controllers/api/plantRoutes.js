@@ -49,28 +49,21 @@ router.post("/", withAuth, (req, res) => {
 });
 
 //TODO: add auth
-router.post('/upload', [uploadFile.single("image")], async (req, res) => {
+// Create Plant and upload image
+router.post('/upload', uploadFile.single("image"), async (req, res) => {
   try {
-    console.log(req.file)
-    console.log(req.body)
     if(req.file == undefined) {
-      console.log('no file')
       return res.status(400).send('You must select a file.');
     }
-    console.log('yes file')
-    console.log(req.body.plant_name)
-    console.log(req.body.description)
-    console.log(req.file.originalname)
-    // const fileName = req.session.user.id + req.body.name
     const newPlant = await Plant.create({
       plant_name: req.body.plant_name,
       description: req.body.description,
-      image: req.session.user.id + "-" +  req.file.originalname ,
+      //store file name in the image key so it can be called using it's file extention
+      image: req.session.user.id + "-" +  req.file.originalname,
       location: req.body.location,
       user_id: req.session.user.id
     })
 
-    console.log(newPlant)
     res.status(200).redirect('/home')
   } catch (err) {
     res.status(400).json(err);
