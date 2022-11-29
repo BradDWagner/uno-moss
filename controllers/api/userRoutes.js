@@ -48,9 +48,10 @@ router.post("/login", async (req, res) => {
         id: userData.id,
         user_name: userData.user_name,
       };
+      req.session.logged_in = true;
+
       const cleanData = userData.get({ plain: true });
       console.log(cleanData);
-      res.render("homepage", cleanData);
     }
   } catch (err) {
     console.log(err);
@@ -91,4 +92,3 @@ router.delete("/:id", (req, res) => {
 });
 
 module.exports = router;
-
