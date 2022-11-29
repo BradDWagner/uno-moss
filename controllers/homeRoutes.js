@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const withAuth = require("../utils/auth");
 const { User, Plant } = require("../models");
+const { findAll, findByPk } = require("../models/Plant");
 
 router.get("/", (req, res) => {
   if (req.session.user) {
@@ -60,3 +61,7 @@ router.get('/grow', async (req, res) => {
 })
 
 module.exports = router;
+
+router.get('/newUser', async (req, res) => {
+  res.render('newUser')
+})
