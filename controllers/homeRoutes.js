@@ -2,16 +2,20 @@ const express = require("express");
 const router = express.Router();
 const withAuth = require("../utils/auth");
 const { User, Plant } = require("../models");
-const { findAll, findByPk } = require("../models/Plant");
+// const { findAll, findByPk } = require("../models/Plant");
 
 router.get("/", (req, res) => {
-  if (req.session.user) {
+  if (req.session.logged_in) {
     return res.redirect("/home");
   }
   res.render("login");
 });
 
-router.get("/home", async (req, res) => {
+router.get('/newUser', async (req, res) => {
+  res.render('newUser', {logged_in: req.session.logged_in})
+})
+
+router.get("/home", withAuth, async (req, res) => {
   try {
     // Get all plants and JOIN with user data
     const plantData = await Plant.findAll({
@@ -38,13 +42,14 @@ router.get("/home", async (req, res) => {
   }
 });
 
-router.get("/grow", (req, res) => {
+router.get("/grow", withAuth, (req, res) => {
   res.render("create", {
     logged_in: req.session.logged_in,
   });
 });
 
 router.get("/plant/:id", withAuth, async (req, res) => {
+  console.log(req.params.id)
   try {
     const plantData = await Plant.findByPk(req.params.id, {
       include: [
@@ -54,8 +59,10 @@ router.get("/plant/:id", withAuth, async (req, res) => {
         },
       ],
     });
+    console.log(plantData)
+    const plant = plantData.get({ plain: true })
     res.render("post", {
-      plantData,
+      plant,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -64,13 +71,7 @@ router.get("/plant/:id", withAuth, async (req, res) => {
   }
 });
 
-router.get('/grow', async (req, res) => {
-  res.render('create')
-})
 
-router.get('/newUser', async (req, res) => {
-  res.render('newUser', {logged_in: req.session.logged_in})
-})
 
 module.exports = router;
 

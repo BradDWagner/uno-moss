@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uno Moss</title>
 
-    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="/css/form.css">
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/post.css">
@@ -19,7 +19,7 @@
     {{!-- nav bar is same across all pages --}}
     <nav class="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="x">
+            <a class="navbar-brand" href="/home">
                 <img src="/img/Logo.jpg" alt="Logo" width="50" height="44"
                     class="d-inline-block align-text-middle">
                 <h1 class="d-inline-block align-text-top">Uno Moss</h1>
@@ -28,7 +28,7 @@
         {{!-- if logged in, a 'Profile' btn will appear to route the user back to their homepage as needed --}}
         {{!-- if loggged in, a 'Logout' btn will appear --}}
         {{#if logged_in}}
-        <a class="d-inline-block align-text-top" href="/homepage">Profile</a> |
+        <a class="d-inline-block align-text-top" href="/home">Profile</a> |
         <a class="d-inline-block align-text-top" id="logout">Logout</a>
         {{/if}}
     </nav>

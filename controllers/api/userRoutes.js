@@ -15,6 +15,7 @@ router.get("/", (req, res) => {
       res.status(500).json({ msg: "an error occured", err });
     });
 });
+
 router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
@@ -66,7 +67,8 @@ router.post("/login", async (req, res) => {
       req.session.logged_in = true;
 
       const cleanData = userData.get({ plain: true });
-      console.log(cleanData);
+      console.log(cleanData)
+      res.json({logged_in: req.session.logged_in, cleanData});
     }
   } catch (err) {
     console.log(err);
