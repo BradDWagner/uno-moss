@@ -1,6 +1,6 @@
 
 const newUploadHandler = async (event) => {
-    // event.preventDefauld();
+    event.preventDefault();
     const plant_name = document.querySelector('#plant_name').value.trim();
     const location = document.querySelector('#location').value.trim();
     const description = document.querySelector('#description')

@@ -15,6 +15,7 @@ router.get("/", (req, res) => {
       res.status(500).json({ msg: "an error occured", err });
     });
 });
+
 router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
@@ -32,6 +33,21 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// Create a user
+router.post('/', async (req, res) => {
+  try {
+    const userData = await User.create(req.body);
+
+    req.session.user ={
+      id: userData.id,
+      user_name: userData.user_name,
+    };
+    req.session.logged_in = true;
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 // Login user
 router.post("/login", async (req, res) => {
   try {
@@ -51,7 +67,8 @@ router.post("/login", async (req, res) => {
       req.session.logged_in = true;
 
       const cleanData = userData.get({ plain: true });
-      console.log(cleanData);
+      console.log(cleanData)
+      res.json({logged_in: req.session.logged_in, cleanData});
     }
   } catch (err) {
     console.log(err);
