@@ -17,35 +17,40 @@ ___
 <div id="description"></div>
 
 ## **Description**
-text here
-
-___
-
-<div id="installation"></div>
-
-## **Installation Instructions**
-text here
+Uno Moss is a mobile-first app that allows new and existing botany enthusiasts to track, post, and share field notes about their favorite flora discoveries.
 
 ___
 
 <div id="usage"></div>
 
 ## **Intended Usage**
-text here
+Uno Moss's goal is for users to be able to track and share their plant discoveries with fellow botanophiles and ultimately create a flourishing garden of information about plant life and their locale. 
 
 ___
 
 <div id="contributions"></div>
 
 ## **Contributions**
-text here
+* Brad Wagner: JS, API, Multer Models, Middleware, Seeds, General Support
+* Shel Cloyd: HTML, CSS, Handlebars, JS, ReadMe
+* Alice Nouhouemale: Controllers 
+* Chris Kang: Handlebars, JS, ReadMe
+
+How To Contribute:
+
+Create a pull request and/or leave comments that the creators can review!
+
+
 
 ___
 
 <div id="instructions"></div>
 
 ## **How to Use Uno Moss**
-text here
+1. Visit the website - https://peaceful-badlands-59717.herokuapp.com/
+2. Click Sign-Up to create an account or Login to access exisiting profile
+3. Start sharing your findings and/or browse fellow foliage-finders' discoveries!
+
 
 ___
 
@@ -59,21 +64,31 @@ ___
 <div id="link"></div>
 
 ## **Link to Application**
-* link here
+* https://peaceful-badlands-59717.herokuapp.com/
 
 ___
 
 <div id="tech"></div>
 
 ## **Technologies Used**
-* text here
-* text here
-* text here
+* Express
+* Multer
+* Bootstrap
+* Handlebars
+* Javascript
+* CSS
+* Node JS
 
 ___
 
 <div id="contact"></div>
 
 ## **Questions?**
-* GitHub: 
-* Email:  
+* GitHub: https://github.com/BradDWagner
+* Email: BradDWagner@Outlook.com
+* GitHub: https://github.com/shelcloyd
+* Email: None@none.com
+* GitHub: https://github.com/Alicenouhouemale
+* Email: alicenouhouemale@gmail.com 
+* GitHub: https://github.com/kjman26
+* Email:  Kjman26@gmail.com
