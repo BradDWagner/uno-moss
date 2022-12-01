@@ -65,6 +65,8 @@ justify-content: space-between;
     background-color: white;
     display: flex;
     flex-direction: row;
+    height: 100px;
+    align-items: center;
   }
 
   #navbar a {
@@ -133,8 +135,17 @@ justify-content: space-between;
   margin: auto;
 }
 
-@media only screen and (min-width: 900px) {
-  #post {
-    width: auto;
-  }
+#log {
+  width: 50%;
+  margin: auto;
+}
+
+#log a {
+  text-decoration: none;
+  margin: 50px;
+}
+
+.btn {
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
