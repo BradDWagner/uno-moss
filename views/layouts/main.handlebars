@@ -29,7 +29,7 @@
         {{!-- if logged in, a 'Profile' btn will appear to route the user back to their homepage as needed --}}
         {{!-- if loggged in, a 'Logout' btn will appear --}}
         {{#if logged_in}}
-        <a class="d-inline-block align-text-top" href="/home">Profile</a> |
+        <a class="d-inline-block align-text-top" href="/profile/{{user_id}}">Profile</a> |
         <a class="d-inline-block align-text-top" id="logout">Logout</a>
         {{/if}}
     </nav>
