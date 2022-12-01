@@ -1,6 +1,8 @@
-<a href="/grow"><button type="button" class="btn btn-success btn-lg" id="grow">Grow Your Garden</button></a>
+<div id="profile">
+    <a href="/grow"><button type="button" class="btn btn-success btn-lg" id="grow">Grow Your Garden</button></a>
 
-<h1>{{user.user_name}}'s garden</h1>
+    <h1 class="display-1">{{user.user_name}}'s Garden</h1>
+</div>
 
 <div class="container">
     {{#each user.plants as |plant|}}

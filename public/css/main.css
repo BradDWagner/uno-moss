@@ -87,6 +87,7 @@ justify-content: space-between;
   .display-1 {
     color: rgb(8, 58, 8);
     margin: auto;
+    margin-bottom: 25px;
   }
 
   #loginContainer {
@@ -109,4 +110,31 @@ justify-content: space-between;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+#community {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
+#post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+@media only screen and (min-width: 900px) {
+  #post {
+    width: auto;
+  }
 }
