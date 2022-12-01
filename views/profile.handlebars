@@ -1,0 +1,18 @@
+<a href="/grow"><button type="button" class="btn btn-success btn-lg" id="grow">Grow Your Garden</button></a>
+
+<h1>{{user.user_name}}'s garden</h1>
+
+<div class="container">
+    {{#each user.plants as |plant|}}
+    <div class="card" style="width: 18rem;">
+        <a href="/plant/{{id}}">
+            <div class="wrapper">
+                <img src="/img/uploads/{{plant.image}}" alt="logo">
+            </div>
+            <div class="card-body">
+                <h1 class="card-text">{{plant.plant_name}}</h1>
+            </div>
+        </a>
+    </div>
+    {{/each}}
+</div>
